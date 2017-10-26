@@ -32,14 +32,10 @@ export class Recipe{
 
             let currentRecipe = recipes[counter];
             let RecipeId = currentRecipe["id"];
-            console.log(req.body);
+            
             if(req.params.id == RecipeId){
                 var reqData = req.body;
                 
-                console.log(reqData);
-                console.log(reqData["timetaken"])
-                console.log(reqData["timetaken"]);
-
                 currentRecipe["name"]=reqData.name;
                 currentRecipe["timetaken"]=reqData["timetaken"];
                 currentRecipe["ingredient"]=reqData["ingredient"];
