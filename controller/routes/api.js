@@ -39,6 +39,11 @@ export class Recipe{
                 console.log(reqData);
                 console.log(reqData["timetaken"])
                 console.log(reqData["timetaken"]);
+<<<<<<< HEAD
+=======
+
+                currentRecipe["name"]=reqData.name;
+>>>>>>> Put-Feature
                 currentRecipe["timetaken"]=reqData["timetaken"];
                 currentRecipe["upvote"]=reqData.upvote;
                 currentRecipe["downvote"]=reqData.downvote;
@@ -47,7 +52,11 @@ export class Recipe{
 
 
 
+<<<<<<< HEAD
                 return res.send(recipes)
+=======
+                return res.send(currentRecipe)
+>>>>>>> Put-Feature
 
             }
          }
