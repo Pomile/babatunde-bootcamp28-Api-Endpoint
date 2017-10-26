@@ -33,12 +33,20 @@ export class Recipe{
             let currentRecipe = recipes[counter];
             let RecipeId = currentRecipe["id"];
             console.log(req.body);
-            if(req.params.id == recipeId){
-                let reqData = req.body;
-                let updateData = JSON.stringify(reqData);
-                console.log(Recipes[counter]["id"]);
-                Recipes[counter]["id"]=updateData;
+            if(req.params.id == RecipeId){
+                var reqData = req.body;
                 
+                console.log(reqData);
+                console.log(reqData["timetaken"])
+                console.log(reqData["timetaken"]);
+                currentRecipe["timetaken"]=reqData["timetaken"];
+                currentRecipe["upvote"]=reqData.upvote;
+                currentRecipe["downvote"]=reqData.downvote;
+                currentRecipe["favourite"]=reqData.favourite;
+                currentRecipe["reviews"].push(reqData.reviews);
+
+
+
                 return res.send(recipes)
 
             }

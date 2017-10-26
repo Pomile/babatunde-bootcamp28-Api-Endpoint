@@ -1,10 +1,10 @@
 import express from 'express';
-
+import mongoose from 'mongoose';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import {Recipe} from './controller/routes/api';
 let app = express();
-let port = 4099;
+let port = 3390;
 import config from 'config'; 
 
 //don't show the log when it is test
@@ -22,14 +22,16 @@ app.use(bodyParser.json({ type: 'application/json'}));
 
 app.get("/", (req, res) => res.json({message: "Welcome to our Bookstore!"}));
 
-app.get('/api/recipes', (req, res)=>{
 
-    Recipe.getRecipe(req, res);
-
-});
 app.post('/api/recipes', (req, res)=>{
 
     Recipe.postRecipe(req, res);
+
+});
+// Update Recipe by Id
+app.put('/api/recipes/:id', (req, res)=>{
+
+    Recipe.putRecipe(req, res);
 
 });
 
