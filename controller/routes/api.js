@@ -32,16 +32,19 @@ export class Recipe{
 
             let currentRecipe = recipes[counter];
             let RecipeId = currentRecipe["id"];
-            console.log(req.body);
+            
             if(req.params.id == RecipeId){
                 var reqData = req.body;
                 
+<<<<<<< HEAD
                 console.log(reqData);
                 console.log(reqData["timetaken"])
                 console.log(reqData["timetaken"]);
 <<<<<<< HEAD
 =======
 
+=======
+>>>>>>> Put-Feature
                 currentRecipe["name"]=reqData.name;
 >>>>>>> Put-Feature
                 currentRecipe["timetaken"]=reqData["timetaken"];
