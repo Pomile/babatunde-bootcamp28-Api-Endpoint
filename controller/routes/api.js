@@ -45,6 +45,8 @@ export class Recipe{
                 currentRecipe["name"]=reqData.name;
 >>>>>>> Put-Feature
                 currentRecipe["timetaken"]=reqData["timetaken"];
+                currentRecipe["ingredient"]=reqData["ingredient"];
+                currentRecipe["equipments"]=reqData["equipments"];
                 currentRecipe["upvote"]=reqData.upvote;
                 currentRecipe["downvote"]=reqData.downvote;
                 currentRecipe["favourite"]=reqData.favourite;
