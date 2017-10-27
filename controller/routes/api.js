@@ -68,19 +68,21 @@ export class Recipe{
    static deleteRecipe(req, res) {
 
 
-    var recipeLength = recipes.length;
-    var counter =0;
+        var recipeLength = recipes.length;
+        var counter =0;
         for(counter; counter<recipeLength;counter++){
 
                 let currentRecipe = recipes[counter];
                 let recipeId = currentRecipe["id"];
                 console.log(req.params.id);
                 if(req.params.id == recipeId){
-                    recipes.splice(currentRecipe, 1);
+                    recipes.splice(counter, 1);
                     console.log(recipes)
                     return res.send(currentRecipe);
                 }
         }
+
+        console.log(recipes);
 
     }
 

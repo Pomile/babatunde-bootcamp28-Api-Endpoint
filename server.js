@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import {Recipe} from './controller/routes/api';
 let app = express();
-let port = 3394;
+let port = 3396;
 import config from 'config'; 
 
 //don't show the log when it is test
