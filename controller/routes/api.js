@@ -86,6 +86,11 @@ export class Recipe{
 
     }
 
+    static getRecipes(req, res) {
+    
+        res.send(recipes);
+    }
+
 }
 
 
