@@ -34,6 +34,12 @@ app.put('/api/recipes/:id', (req, res)=>{
     Recipe.putRecipe(req, res);
 
 });
+// Delete Recipe by ID
+app.delete('/api/recipes/:id', (req, res)=>{
+
+    Recipe.deleteRecipe(req, res);
+
+});
 
 
 app.get("*", (req, res) => res.json({message: "Welcome to Our Recipe World!"}));
