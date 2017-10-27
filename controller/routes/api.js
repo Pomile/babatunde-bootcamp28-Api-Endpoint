@@ -36,17 +36,17 @@ export class Recipe{
             if(req.params.id == RecipeId){
                 var reqData = req.body;
                 
-<<<<<<< HEAD
+
                 console.log(reqData);
                 console.log(reqData["timetaken"])
                 console.log(reqData["timetaken"]);
-<<<<<<< HEAD
-=======
 
-=======
->>>>>>> Put-Feature
+
+
+
+
                 currentRecipe["name"]=reqData.name;
->>>>>>> Put-Feature
+
                 currentRecipe["timetaken"]=reqData["timetaken"];
                 currentRecipe["ingredient"]=reqData["ingredient"];
                 currentRecipe["equipments"]=reqData["equipments"];
@@ -54,22 +54,35 @@ export class Recipe{
                 currentRecipe["downvote"]=reqData.downvote;
                 currentRecipe["favourite"]=reqData.favourite;
                 currentRecipe["reviews"].push(reqData.reviews);
-
-
-
-<<<<<<< HEAD
-                return res.send(recipes)
-=======
                 return res.send(currentRecipe)
->>>>>>> Put-Feature
+
 
             }
          }
     }
 
 /*
- * GET /book/:id route to retrieve a book given its id.
+ * DELETE /book/:id route to delete a book given its id.
+ * 
  */
+   static deleteRecipe(req, res) {
+
+
+    var recipeLength = recipes.length;
+    var counter =0;
+        for(counter; counter<recipeLength;counter++){
+
+                let currentRecipe = recipes[counter];
+                let recipeId = currentRecipe["id"];
+                console.log(req.params.id);
+                if(req.params.id == recipeId){
+                    recipes.splice(currentRecipe, 1);
+                    console.log(recipes)
+                    return res.send(currentRecipe);
+                }
+        }
+
+    }
 
 }
 
