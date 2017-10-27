@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import {Recipe} from './controller/routes/api';
 let app = express();
-let port = 3396;
+let port = 3903;
 import config from 'config'; 
 
 //don't show the log when it is test
@@ -40,6 +40,14 @@ app.delete('/api/recipes/:id', (req, res)=>{
     Recipe.deleteRecipe(req, res);
 
 });
+// Get All Recipe 
+app.get('/api/recipes', (req, res)=>{
+
+    Recipe.getRecipes(req, res);
+
+});
+
+
 
 
 app.get("*", (req, res) => res.json({message: "Welcome to Our Recipe World!"}));
