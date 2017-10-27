@@ -33,17 +33,11 @@ export class Recipe{
             let currentRecipe = recipes[counter];
             let RecipeId = currentRecipe["id"];
             
-            if(req.params.id == RecipeId){
+            if( RecipeId==Number(req.params.id)){
                 var reqData = req.body;
-                
-
                 console.log(reqData);
                 console.log(reqData["timetaken"])
                 console.log(reqData["timetaken"]);
-
-
-
-
 
                 currentRecipe["name"]=reqData.name;
 
@@ -90,6 +84,25 @@ export class Recipe{
     
         res.send(recipes);
     }
+    
+   static postReviews(req, res){
+       
+       var reqId= parseInt(req.params.id);
+       let RecipeLength = recipes.length;
+       let counter =0;
+       for(counter; counter<RecipeLength; counter++){
+
+           let currentRecipe = recipes[counter];
+           let recipeId = currentRecipe["id"];
+           
+           if (recipeId==reqId){
+                var reqData = req.body;
+                currentRecipe["reviews"].push(reqData["reviews"]);
+                return res.send(currentRecipe)
+           }
+       }
+
+   }
 
 }
 

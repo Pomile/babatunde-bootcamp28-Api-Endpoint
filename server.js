@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import {Recipe} from './controller/routes/api';
 let app = express();
-let port = 3903;
+let port = 4025;
 import config from 'config'; 
 
 //don't show the log when it is test
@@ -47,10 +47,16 @@ app.get('/api/recipes', (req, res)=>{
 
 });
 
+app.post('/api/recipes/:id/reviews', (req, res)=>{
+    //console.log(typeof req.params.id)
+    Recipe.postReviews(req, res);
+
+});
 
 
 
-app.get("*", (req, res) => res.json({message: "Welcome to Our Recipe World!"}));
+
+app.get("*", (req, res) => res.json({message: "Welcome to My Recipe World!"}));
 app.listen(port);
 console.log("Listening on port " + port);
 
